@@ -76,5 +76,10 @@ namespace PryGiovanniMaciaEstructura
             frmGrafo Graf = new frmGrafo();
             Graf.ShowDialog();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

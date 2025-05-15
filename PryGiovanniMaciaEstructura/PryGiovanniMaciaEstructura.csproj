@@ -48,7 +48,9 @@
   <ItemGroup>
     <Compile Include="clsArbolBinario.cs" />
     <Compile Include="clsArchivo.cs" />
+    <Compile Include="clsBaseDeDatos.cs" />
     <Compile Include="clsCola.cs" />
+    <Compile Include="clsGrafo.cs" />
     <Compile Include="clsListaDoble.cs" />
     <Compile Include="clsListSimple.cs" />
     <Compile Include="clsNodo.cs" />
@@ -64,6 +66,12 @@
     </Compile>
     <Compile Include="frmArbolBinario.Designer.cs">
       <DependentUpon>frmArbolBinario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaseDatosMostrarTabla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaseDatosMostrarTabla.Designer.cs">
+      <DependentUpon>frmBaseDatosMostrarTabla.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCiudades.cs">
       <SubType>Form</SubType>
@@ -120,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArbolBinario.resx">
       <DependentUpon>frmArbolBinario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaseDatosMostrarTabla.resx">
+      <DependentUpon>frmBaseDatosMostrarTabla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCiudades.resx">
       <DependentUpon>frmCiudades.cs</DependentUpon>
