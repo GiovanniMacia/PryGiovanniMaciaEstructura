@@ -30,16 +30,15 @@
         {
             this.btnMostrar = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCargar = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(982, 573);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMostrar.Location = new System.Drawing.Point(736, 466);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(100, 28);
+            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnMostrar.TabIndex = 3;
             this.btnMostrar.Text = "Mostrar";
             this.btnMostrar.UseVisualStyleBackColor = true;
@@ -48,39 +47,36 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(79, 28);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Location = new System.Drawing.Point(59, 23);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersWidth = 51;
-            this.dgv.Size = new System.Drawing.Size(972, 524);
+            this.dgv.Size = new System.Drawing.Size(729, 426);
             this.dgv.TabIndex = 2;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
-            // comboBox1
+            // cmbCargar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCargar.FormattingEnabled = true;
+            this.cmbCargar.Items.AddRange(new object[] {
             "Autor",
             "Pais",
             "Libro",
             "Idioma"});
-            this.comboBox1.Location = new System.Drawing.Point(798, 577);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 4;
+            this.cmbCargar.Location = new System.Drawing.Point(598, 469);
+            this.cmbCargar.Name = "cmbCargar";
+            this.cmbCargar.Size = new System.Drawing.Size(121, 21);
+            this.cmbCargar.TabIndex = 4;
             // 
             // frmBaseDatosMostrarTabla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 614);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(838, 499);
+            this.Controls.Add(this.cmbCargar);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.dgv);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmBaseDatosMostrarTabla";
-            this.Text = "frmBaseDatosMostrarTabla";
+            this.Text = "Base Datos Mostrar Tabla";
             this.Load += new System.EventHandler(this.frmBaseDatosMostrarTabla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
@@ -91,6 +87,6 @@
 
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCargar;
     }
 }

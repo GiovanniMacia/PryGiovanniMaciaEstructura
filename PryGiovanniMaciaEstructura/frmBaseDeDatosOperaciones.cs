@@ -16,5 +16,10 @@ namespace PryGiovanniMaciaEstructura
         {
             InitializeComponent();
         }
+
+        private void frmBaseDeDatosOperaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

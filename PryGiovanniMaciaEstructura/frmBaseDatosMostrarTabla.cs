@@ -12,6 +12,7 @@ namespace PryGiovanniMaciaEstructura
 {
     public partial class frmBaseDatosMostrarTabla : Form
     {
+        clsBaseDeDatos BD = new clsBaseDeDatos();
         public frmBaseDatosMostrarTabla()
         {
             InitializeComponent();
@@ -20,8 +21,8 @@ namespace PryGiovanniMaciaEstructura
         
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            dgv.DataSource = null;
-            
+            BD.Listar(cmbCargar.Text, dgv);
+
         }
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,7 +32,19 @@ namespace PryGiovanniMaciaEstructura
 
         private void frmBaseDatosMostrarTabla_Load(object sender, EventArgs e)
         {
-
+            BD.Listar(dgv);
+            cargarCmb();
+            cmbCargar.SelectedIndex = 0;
         }
+        private void cargarCmb()
+        {
+            string[] tablas = { "Autor", "Idioma", "Libro", "Pais" };
+            cmbCargar.Items.Clear();
+            foreach (string s in tablas)
+            {
+                cmbCargar.Items.Add(s);
+            }
+        }
+
     }
 }

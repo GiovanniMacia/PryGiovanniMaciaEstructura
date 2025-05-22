@@ -12,6 +12,7 @@ namespace PryGiovanniMaciaEstructura
     {
         public enum TipoTema { Claro, Oscuro }
 
+
         public static TipoTema TemaActual = TipoTema.Claro;
 
         public static void AplicarTema(Form formulario)

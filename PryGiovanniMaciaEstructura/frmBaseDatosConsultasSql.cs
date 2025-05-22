@@ -12,7 +12,6 @@ namespace PryGiovanniMaciaEstructura
 {
     public partial class frmBaseDatosConsultasSql : Form
     {
-        clsBaseDeDatos BD = new clsBaseDeDatos();
         public frmBaseDatosConsultasSql()
         {
             InitializeComponent();
@@ -27,7 +26,8 @@ namespace PryGiovanniMaciaEstructura
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            BD.Consultar(txtQuery.Text, dgvMostrarConsulta);
+            clsBaseDeDatos objBaseDeDatos = new clsBaseDeDatos();
+            //objBaseDeDatos.Listar(dgvMostrarConsulta, txtSql.Text);
         }
     }
 }

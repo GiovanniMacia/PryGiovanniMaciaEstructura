@@ -14,9 +14,15 @@ namespace PryGiovanniMaciaEstructura
         private OleDbConnection conexion = new OleDbConnection();
         private OleDbCommand Comando = new OleDbCommand();
         private OleDbDataAdapter adaptador = new OleDbDataAdapter();
-        private string CadenaConexion = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Libreria.mdb";
-        private string CadenaConexion2 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Libreria.mdb";
-      
+
+
+
+        private String CadenaConexion = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Libreria.mdb";
+
+
+
+        //private String CadenaConexion = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Libreria.mdb";
+
         public void Listar(DataGridView Grilla)
         {
             try
@@ -53,6 +59,28 @@ namespace PryGiovanniMaciaEstructura
                 adaptador = new OleDbDataAdapter(Comando);
                 adaptador.Fill(DS, Tabla);
                 Grilla.DataSource = DS.Tables[Tabla];
+                conexion.Close();
+            }
+            catch (Exception varError)
+            {
+                conexion.Close();
+                MessageBox.Show(varError.Message);
+            }
+        }
+        public void Listar( DataGridView Grilla, string Sql)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+                Comando.Connection = conexion;
+                Comando.CommandType = CommandType.Text;
+                Comando.CommandText = Sql;
+
+                DataSet DS = new DataSet();
+                adaptador = new OleDbDataAdapter(Comando);
+                adaptador.Fill(DS, "Tabla");
+                Grilla.DataSource = DS.Tables["Tabla"];
                 conexion.Close();
             }
             catch (Exception varError)
