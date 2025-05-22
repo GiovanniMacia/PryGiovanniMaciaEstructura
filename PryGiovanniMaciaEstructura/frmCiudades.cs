@@ -16,6 +16,7 @@ namespace PryGiovanniMaciaEstructura
         public frmCiudades()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsArchivo x = new clsArchivo();
         private void frmCiudades_Load(object sender, EventArgs e)

@@ -15,6 +15,12 @@ namespace PryGiovanniMaciaEstructura
         public frmDatosDelProgramador()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
+        }
+
+        private void frmDatosDelProgramador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

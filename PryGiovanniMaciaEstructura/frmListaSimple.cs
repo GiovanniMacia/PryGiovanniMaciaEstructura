@@ -16,6 +16,7 @@ namespace PryGiovanniMaciaEstructura
         public frmListaSimple()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsListSimple Lista = new clsListSimple();
         clsArchivo x = new clsArchivo();

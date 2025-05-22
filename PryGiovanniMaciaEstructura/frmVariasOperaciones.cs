@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace PryGiovanniMaciaEstructura
 {
-    public partial class frmGrafo : Form
+    public partial class frmVariasOperaciones : Form
     {
-        public frmGrafo()
+        public frmVariasOperaciones()
         {
             InitializeComponent();
-            clsTemas.AplicarTema(this);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmGrafo_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

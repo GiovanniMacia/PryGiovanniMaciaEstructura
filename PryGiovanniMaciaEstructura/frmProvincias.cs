@@ -16,6 +16,7 @@ namespace PryGiovanniMaciaEstructura
         public frmProvincias()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsArchivo X = new clsArchivo();
         private void frmProvincias_Load(object sender, EventArgs e)

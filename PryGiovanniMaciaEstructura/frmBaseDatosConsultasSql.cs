@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace PryGiovanniMaciaEstructura
 {
-    public partial class frmGrafo : Form
+    public partial class frmBaseDatosConsultasSql : Form
     {
-        public frmGrafo()
+        clsBaseDeDatos BD = new clsBaseDeDatos();
+        public frmBaseDatosConsultasSql()
         {
             InitializeComponent();
             clsTemas.AplicarTema(this);
+
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void frmBaseDatosConsultasSql_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void frmGrafo_Load(object sender, EventArgs e)
+        private void btnListar_Click(object sender, EventArgs e)
         {
-
+            BD.Consultar(txtQuery.Text, dgvMostrarConsulta);
         }
     }
 }

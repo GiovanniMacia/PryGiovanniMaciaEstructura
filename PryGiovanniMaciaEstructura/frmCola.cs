@@ -15,6 +15,7 @@ namespace PryGiovanniMaciaEstructura
         public frmCola()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
 
         clsCola filaPersonas = new clsCola();

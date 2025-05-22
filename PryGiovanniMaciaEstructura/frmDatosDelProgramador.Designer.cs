@@ -127,6 +127,7 @@
             this.Name = "frmDatosDelProgramador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos Del Programador";
+            this.Load += new System.EventHandler(this.frmDatosDelProgramador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

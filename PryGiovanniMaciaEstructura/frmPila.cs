@@ -15,6 +15,7 @@ namespace PryGiovanniMaciaEstructura
         public frmPila()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsPila filaPersonas = new clsPila();
         private void frmPila_Load(object sender, EventArgs e)

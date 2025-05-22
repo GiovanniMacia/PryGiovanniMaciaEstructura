@@ -15,35 +15,15 @@ namespace PryGiovanniMaciaEstructura
         public frmArbolBinario()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsArbolBinario Arbol = new clsArbolBinario();
         clsArchivo x = new clsArchivo();
         private void frmArbolBinario_Load(object sender, EventArgs e)
         {
-
+            ValidarDatos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int codigo = Convert.ToInt32(txtCodigo.Text);
-
-
-            if (Arbol.BuscarCodigo(codigo) != null)
-            {
-                Arbol.Eliminar(codigo);
-                Arbol.Recorrer(tvArbol);
-                Arbol.Recorrer(dgvDatos);
-                MessageBox.Show("Nodo eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Código no encontrado en el árbol.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            txtCodigo.Clear();
-            txtNombre.Clear();
-            txtTramite.Clear();
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -60,8 +40,94 @@ namespace PryGiovanniMaciaEstructura
                 aux.Trámite = txtTramite.Text;
                 Arbol.Agregar(aux);
             }
+            LosRecorrer();
+            limpiarTodo();
+        }
+
+      
+        private void LosRecorrer()
+        {
             Arbol.Recorrer(tvArbol);
+            Arbol.Recorrer(cmbCodigo);
             Arbol.Recorrer(dgvDatos);
+        }
+        private void limpiarTodo()
+        {
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtTramite.Text = "";
+            cmbCodigo.Text = "";
+        }
+
+       
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Arbol.Eliminar(Convert.ToInt32(cmbCodigo.Text));
+            LosRecorrer();
+        }
+        private void ValidarDatos()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtTramite.Text))
+            {
+                btnAgregar.Enabled = false;
+            }
+            else
+            {
+                btnAgregar.Enabled = true;
+            }
+        }
+
+       
+
+        private void btnEquilibrar_Click_1(object sender, EventArgs e)
+        {
+            Arbol.Equilibrar();
+            Arbol.Recorrer(tvArbol);
+
+        }
+
+        private void optInOrden_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (cmbCodigo.Items.Count > 0) Arbol.Recorrer(dgvDatos);
+
+        }
+
+        private void optPreOrden_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (cmbCodigo.Items.Count > 0) Arbol.RecorrerPre(dgvDatos);
+        }
+
+        private void optPostOrden_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (cmbCodigo.Items.Count > 0) Arbol.RecorrerPost(dgvDatos);
+        }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCodigo.SelectedIndex != -1)
+            {
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+            }
+        }
+
+        private void txtCodigo_TextChanged_1(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtNombre_TextChanged_1(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtTramite_TextChanged_1(object sender, EventArgs e)
+        {
+            ValidarDatos();
         }
     }
 }

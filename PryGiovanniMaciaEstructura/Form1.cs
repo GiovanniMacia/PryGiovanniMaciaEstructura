@@ -21,6 +21,8 @@ namespace PryGiovanniMaciaEstructura
         {
             frmDatosDelProgramador x = new frmDatosDelProgramador();
             x.ShowDialog();
+            
+
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +82,51 @@ namespace PryGiovanniMaciaEstructura
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void claroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsTemas.TemaActual = clsTemas.TipoTema.Claro;
+
+            foreach (Form frm in Application.OpenForms)
+            {
+                clsTemas.AplicarTema(frm);
+            }
+        }
+
+        private void oscuroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+                clsTemas.TemaActual = clsTemas.TipoTema.Oscuro;
+
+                foreach (Form frm in Application.OpenForms)
+                {
+                    clsTemas.AplicarTema(frm);
+                }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mostrarUnaTablaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDatosMostrarTabla Mostrar = new frmBaseDatosMostrarTabla();
+            Mostrar.ShowDialog();
+        }
+
+        private void consultaDeBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDatosConsultasSql mostrarConsultas = new frmBaseDatosConsultasSql();
+            mostrarConsultas.ShowDialog();
+        }
+
+        private void operacionesEnBaseDeDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaseDeDatosOperaciones operaciones = new frmBaseDeDatosOperaciones();
+            operaciones.ShowDialog();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace PryGiovanniMaciaEstructura
         public frmListaDoble()
         {
             InitializeComponent();
+            clsTemas.AplicarTema(this);
         }
         clsListaDoble Lista = new clsListaDoble();
         clsArchivo x = new clsArchivo();

@@ -61,5 +61,31 @@ namespace PryGiovanniMaciaEstructura
                 MessageBox.Show(varError.Message);
             }
         }
-}
+        public void Consultar(String query, DataGridView Grilla)
+        {
+            try
+            {
+                conexion.ConnectionString = CadenaConexion;
+                conexion.Open();
+
+                Comando.Connection = conexion;
+                Comando.CommandType = CommandType.Text;
+                Comando.CommandText = query;
+
+                DataSet DS = new DataSet();
+                adaptador = new OleDbDataAdapter(Comando);
+                adaptador.Fill(DS);
+
+                Grilla.DataSource = DS.Tables[0];
+
+                conexion.Close();
+            }
+            catch (Exception varError)
+            {
+                conexion.Close();
+                MessageBox.Show("Ocurrió un error: " + varError.Message);
+            }
+
+        }
+    }
 }
